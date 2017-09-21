@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../external/jquery-2.2.4-min.js"></script>
+    <script type="text/javascript" src="../plugin/fboxy.js"></script>
+    <link rel="stylesheet" href="../plugin/fboxy.css" />
+    <script>
+        $(document).ready(function () {
+            $("a[rel=fboxy]").fboxy();
+            $("a[rel=ifboxy]").fboxy({iframe: true});
+        });
+    </script>
+    <style>
+        body {
+            color: #333;
+            font-family: Helvetiva, Arial;
+            font-size: 14px;
+            line-height: 24px;
+        }
+        h1, h2, h3 {
+            font-weight: normal;
+        }
+        h1 { font-size: 26px; }
+        h2 { font-size: 20px; }
+        li {
+            margin-bottom: 5px;
+        }
+        li li {
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1>fBoxy <sup>beta</sup></h1>
+    <p>fBoxy is a jQuery plugin which adds the ability to load content into a lightbox style popup box. The content can be loaded from another element on page, or any other url (via AJAX or iFrame).</p>
+
+    <h2>Demo</h2>
+    <ul>
+        <li>Sample 1: Load content from another element on page. <a href="#sample1" rel="fboxy" title="Sample 1: Loaded from another element">Click here</a>.</li>
+        <li>Sample 2: Load content from another page via AJAX. <a href="sample-ajax.html" rel="fboxy" title="Sample 2: Loaded via AJAX">Click here</a>.</li>
+        <li>Sample 3: Load another page into an iFrame. <a href="http://www.rahulbharadwaj.com/" rel="ifboxy" title="Sample 3: Loaded into iframe">Click here</a></li>
+    </ul>
+
+    <h2>Usage</h2>
+    <ol>
+        <li>Download and include jQuery v1.7+</li>
+        <li>Download and include following files <a href="../download/fboxy-v1.zip">(Download All)</a>:
+            <ul>
+                <li><a href="plugin/script.js" target="_blank">plugin/script.js</a></li>
+                <li><a href="plugin/style.css" target="_blank">plugin/style.css</a></li>
+                <li><a href="plugin/ring.gif" target="_blank">plugin/ring.gif</a></li>
+            </ul>
+        </li>
+        <li>User <code>$(selector).fboxy();</code></li>
+    </ol>
+    <div id="sample1" class="fboxy-source">
+        This content has been loaded from a <code>&lt;div&gt;</code> with the id "sample1". The original div is hidden using CSS.
+    </div>
+
+    <h2>Options</h2>
+    <ul>
+        <li>
+            <b>showClose</b> (default: true)<br/>
+            Display a close button above the boxy window.
+        </li>
+        <li>
+            <b>showTitle</b> (default: true)<br/>
+            Uses the "title" attribute of the initiating element to display a title above the boxy window.
+        </li>
+        <li>
+            <b>closeEsc</b> (default: true)<br/>
+            The boxy window would close if <code>esc</code> key is pressed.
+        </li>
+        <li>
+            <b>closeBg</b> (default: true)<br/>
+            The boxy window would close if clicked outside the boxy window.
+        </li>
+        <li>
+            <b>iframe</b> (default: false)<br/>
+            If case of url, the link would be loaded inside an iframe.
+        </li>
+        <li>
+            <b>zindex</b> (default: 1000)<br/>
+            The z-index of the boxy window.
+        </li>
+    </ul>
+</body>
+</html>

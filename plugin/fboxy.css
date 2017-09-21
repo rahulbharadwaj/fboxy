@@ -1,0 +1,111 @@
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+#fboxy-bg {
+    position: fixed;
+    top: -50px; right: 0; bottom: -50px; left: 0;
+    background: rgba( 0,0,0,0.5 );
+    visibility: hidden;
+    opacity: 0;
+}
+.fboxy-wrapper {
+    position: absolute;
+    position: fixed;
+    top: 30%; left: 50%;
+    transform: translate(-50%,-30%);
+    height: 60%; width: 60%;
+    max-width: 620px; max-height:480px;
+    opacity: 0.1;
+    transition: all 1s;
+}
+.fboxy-wrapper.loaded {
+    opacity: 1;
+}
+.fboxy-title .fboxy-close {
+    position: absolute;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    opacity: 0.75;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.fboxy-title .fboxy-close:hover {
+    opacity: 1;
+}
+.fboxy-title .fboxy-close:before, 
+.fboxy-title .fboxy-close:after {
+    position: absolute;
+    content: ' ';
+    height: 18px;
+    margin-left: 50%;
+    width: 2px;
+    background-color: #fff;
+}
+.fboxy-title .fboxy-close:before {
+    transform: rotate(45deg);
+}
+.fboxy-title .fboxy-close:after {
+    transform: rotate(-45deg);
+}
+
+.fboxy-wrapper .fboxy-title {
+    padding: 15px 0;
+    position: relative;
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+}
+.fboxy-title h3 {
+    font-size: 1em;
+    font-weight: 400;
+    color: #fff;
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 30px;
+}
+.fboxy-wrapper .fboxy-body {
+    background: #fff;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+    left:0; right: 0; bottom: 0; top: 48px;
+    width: 100%; 
+    padding: 15px;
+    position: absolute;
+    overflow: auto;
+}
+.fboxy-wrapper .fboxy-body.fboxy-body-iframe {
+    padding: 0;
+    -webkit-overflow-scrolling: touch !important;
+    overflow: scroll !important;
+}
+.fboxy-body.fboxy-body-iframe iframe {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: none;
+}
+.fboxy-loading {
+    background: url(ring.gif) center center no-repeat;
+    height: 100%;
+}
+.fboxy-source {
+    display: none;
+}
+@media (max-width: 620px) {
+    .fboxy-wrapper {
+        bottom: 0; left:0; right: 0; top: auto;
+        width: 100%;
+        transform: none;
+        max-height: 100%; height: 640px;
+    }
+    .fboxy-title {
+        margin: 0px 15px;
+    }
+}
